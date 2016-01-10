@@ -10,7 +10,9 @@ namespace Engine.Entities
         private readonly List<Quest> _questsAvailableHere = new List<Quest>();
         private readonly RandomDistributionList<Monster> _monstersPotentiallySpawningHere = 
             new RandomDistributionList<Monster>();
-        private readonly List<BaseGameItem> _itemsRequiredToEnter = new List<BaseGameItem>(); 
+        private readonly List<BaseGameItem> _itemsRequiredToEnter = new List<BaseGameItem>();
+
+        private Monster _currentMonster; 
 
         public Coordinate Coordinates { get; private set; }
         public string Name { get; private set; }
@@ -20,7 +22,26 @@ namespace Engine.Entities
         public List<BaseGameItem> ItemsRequiredToEnter
         {
             get { return _itemsRequiredToEnter; }
-        } 
+        }
+
+        public Monster CurrentMonster
+        {
+            get
+            {
+                // If there is no monster here, or the current monster is dead, get a new monster
+                if(_currentMonster == null || _currentMonster.CurrentHitPoints <= 0)
+                {
+                    // Only get a new monster if this location has monsters assigned to it
+                    if(_monstersPotentiallySpawningHere.IsNotEmpty())
+                    {
+                        _currentMonster = _monstersPotentiallySpawningHere.GetRandomItem();
+                    }
+                }
+
+                return _currentMonster;
+            }
+        }
+
 
         internal Location(Coordinate coordinate, string name, string description)
         {
@@ -40,15 +61,9 @@ namespace Engine.Entities
             get { return _questsAvailableHere.AsReadOnly(); }
         }
 
-        public Monster MonsterEncounteredHere()
-        {
-            // TODO: Add in code to select random monster
-            return null;
-        }
-
         internal void AddPotentialMonster(Monster monster, int likelihoodOfAppearing)
         {
-            _monstersPotentiallySpawningHere.AddElement(monster, likelihoodOfAppearing);
+            _monstersPotentiallySpawningHere.AddItem(monster, likelihoodOfAppearing);
         }
 
         internal void AddAvailableQuest(Quest quest)

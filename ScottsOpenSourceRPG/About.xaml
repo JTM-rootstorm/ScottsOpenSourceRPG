@@ -1,11 +1,15 @@
 ﻿<Window x:Class="ScottsOpenSourceRPG.About"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="About" 
-        FontSize="12pt"
-        Width="380" Height="220">
-
-    <Grid Margin="0,0,4,4">
+        xmlns:resources="clr-namespace:ScottsOpenSourceRPG.Resources"
+        Title="{x:Static resources:Literals.About}"
+        FontSize="11pt"
+        WindowStyle="ToolWindow"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize"
+        Width="400" Height="200">
+    
+    <Grid Margin="5,5,5,5">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -13,22 +17,43 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
+        
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Label Grid.Row="0" x:Name="lblGameName" Content="qwe" HorizontalAlignment="Left"/>
-        <Label Grid.Row="1" x:Name="lblGameVersion" Content="asd" HorizontalAlignment="Left"/>
-        <Label Grid.Row="2" x:Name="lblGameCopyright" Content="zxc" HorizontalAlignment="Left"/>
-        <Grid Grid.Row="3">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <Label Grid.Column="0" Content="Game Engine:"/>
-            <Label Grid.Column="1" HorizontalAlignment="Left">
-                <Hyperlink NavigateUri="https://github.com/ScottLilly/ScottsOpenSourceRPG" RequestNavigate="Hyperlink_License_RequestNavigate">Scott's Open Source RPG Engine</Hyperlink>
-            </Label>
-        </Grid>
-        <Button Grid.Row="4" Content="Close" HorizontalAlignment="Right" Width="75" Padding="7" Click="Button_Click"/>
+        
+        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Content="{Binding Name}"/>
+        <Label Grid.Row="1" Grid.Column="0">
+            <TextBlock>
+                <Run Text="{x:Static resources:Literals.Version}"/>
+                <Run Text=":"/>
+            </TextBlock>
+        </Label>
+        <Label Grid.Row="1" Grid.Column="1" Content="{Binding CurrentVersion}"/>
+        <Label Grid.Row="2" Grid.Column="0">
+            <TextBlock>
+                <Run Text="{x:Static resources:Literals.Copyright}"/>
+                <Run Text=":"/>
+            </TextBlock>
+        </Label>
+        <Label Grid.Row="2" Grid.Column="1">
+            <TextBlock>
+                <Run Text="© "/>
+                <Run Text="{Binding CopyrightHolder, Mode=OneWay}"/>
+                <Run Text=", "/>
+                <Run Text="{Binding CopyrightYears, Mode=OneWay}"/>
+            </TextBlock>
+        </Label>
+        <Label Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2">
+            <Hyperlink NavigateUri="{Binding WebsiteURL}" RequestNavigate="NavigateToURL">
+                <TextBlock Text="{Binding WebsiteName}"/>
+            </Hyperlink>
+        </Label>
+
+        <Button Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" 
+                HorizontalAlignment="Right" Width="75" Padding="2" 
+                Content="{x:Static resources:Literals.Close}" 
+                Click="Button_Click"/>
     </Grid>
 </Window>

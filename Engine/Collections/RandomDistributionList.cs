@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography;
 
 namespace Engine.Collections
 {
@@ -8,7 +7,7 @@ namespace Engine.Collections
     {
         private readonly List<Element> _elements = new List<Element>(); 
 
-        public void AddElement(T item, int distributionPercentage)
+        public void AddItem(T item, int distributionPercentage)
         {
             _elements.Add(new Element(item, distributionPercentage));
         }
@@ -23,7 +22,7 @@ namespace Engine.Collections
             return !IsEmpty();
         }
 
-        public T GetRandomElement()
+        public T GetRandomItem()
         {
             int randomNumber = RandomNumberGenerator.GetNumberBetween(1, _elements.Sum(element => element.DistributionPercentage));
 

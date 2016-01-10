@@ -1,6 +1,5 @@
 ﻿using System.Windows;
 using Engine;
-using Engine.Entities;
 
 namespace ScottsOpenSourceRPG
 {
@@ -12,7 +11,13 @@ namespace ScottsOpenSourceRPG
         {
             InitializeComponent();
 
-            _game = new Game(new World(), new Player());
+            _game = new Game("Scott's Open Source C# RPG", 
+                "Scott's Open Source C# RPG",
+                "https://github.com/ScottLilly/ScottsOpenSourceRPG", 
+                0, 1, 
+                "Scott Lilly", 2015);
+
+            DataContext = _game;
         }
 
         private void MenuItem_Exit_OnClick(object sender, RoutedEventArgs e)
@@ -22,7 +27,8 @@ namespace ScottsOpenSourceRPG
 
         private void MenuItem_About_OnClick(object sender, RoutedEventArgs e)
         {
-            About aboutScreen = new About();
+            var aboutScreen = new About(_game);
+            aboutScreen.Owner = this;
             aboutScreen.ShowDialog();
         }
     }
