@@ -14,7 +14,7 @@ namespace Engine.Entities
 
         public int RewardExperiencePoints { get; private set; }
 
-        internal List<ItemAndQuantity> LootItems
+        public List<ItemAndQuantity> LootItems
         {
             get
             {

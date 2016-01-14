@@ -44,7 +44,7 @@ namespace Engine.Entities
             get { return _rewardRecipes.AsReadOnly(); }
         }
 
-        internal Quest(string name, string description, int minimumLevel, bool isRepeatable, int rewardExperiencePoints, int rewardCurrency)
+        public Quest(string name, string description, int minimumLevel, bool isRepeatable, int rewardExperiencePoints, int rewardCurrency)
         {
             Name = name;
             Description = description;

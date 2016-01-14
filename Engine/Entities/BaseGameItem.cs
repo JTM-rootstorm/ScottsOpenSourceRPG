@@ -10,7 +10,7 @@ namespace Engine.Entities
         public int MinimumLevelToUse { get; private set; }
         public int MaximumStackSize { get; private set; } // Use 0 for unlimited stacking
 
-        internal BaseGameItem(Guid id, string name, string namePlural, int minimumLevelToUse = 0, int maximumStackSize = 0)
+        public BaseGameItem(Guid id, string name, string namePlural, int minimumLevelToUse = 0, int maximumStackSize = 0)
         {
             ID = id;
             Name = name;

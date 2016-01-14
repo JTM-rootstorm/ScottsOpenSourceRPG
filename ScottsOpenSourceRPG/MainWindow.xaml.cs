@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using System;
+using System.IO;
+using System.Windows;
 using Engine;
 
 namespace ScottsOpenSourceRPG
@@ -11,11 +13,24 @@ namespace ScottsOpenSourceRPG
         {
             InitializeComponent();
 
-            _game = new Game("Scott's Open Source C# RPG", 
-                "Scott's Open Source C# RPG",
-                "https://github.com/ScottLilly/ScottsOpenSourceRPG", 
-                0, 1, 
-                "Scott Lilly", 2015);
+            try
+            {
+                var gameInformationFileName = Properties.Settings.Default.GameInformation;
+
+                if(File.Exists(gameInformationFileName))
+                {
+                    var gameInformation = File.ReadAllText(gameInformationFileName);
+                    _game = new Game(gameInformation);
+                }
+                else
+                {
+
+                }
+            }
+            catch(Exception ex)
+            {
+                throw;
+            }
 
             DataContext = _game;
         }

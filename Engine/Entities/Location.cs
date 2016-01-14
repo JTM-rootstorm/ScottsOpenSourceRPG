@@ -43,14 +43,14 @@ namespace Engine.Entities
         }
 
 
-        internal Location(Coordinate coordinate, string name, string description)
+        public Location(Coordinate coordinate, string name, string description)
         {
             Coordinates = coordinate;
             Name = name;
             Description = description;
         }
 
-        internal Location(int x, int y, string name, string description, int minimumLevel) : 
+        public Location(int x, int y, string name, string description, int minimumLevel) : 
             this(new Coordinate(x,y), name, description)
         {
             MinimumLevel = minimumLevel;
@@ -61,12 +61,12 @@ namespace Engine.Entities
             get { return _questsAvailableHere.AsReadOnly(); }
         }
 
-        internal void AddPotentialMonster(Monster monster, int likelihoodOfAppearing)
+        public void AddPotentialMonster(Monster monster, int likelihoodOfAppearing)
         {
             _monstersPotentiallySpawningHere.AddItem(monster, likelihoodOfAppearing);
         }
 
-        internal void AddAvailableQuest(Quest quest)
+        public void AddAvailableQuest(Quest quest)
         {
             _questsAvailableHere.Add(quest);
         }

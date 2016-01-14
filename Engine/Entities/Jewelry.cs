@@ -6,7 +6,7 @@ namespace Engine.Entities
     {
         public JeweleryLocations JewelryLocation { get; private set; }
 
-        internal Jewelry(Guid id, string name, string namePlural, JeweleryLocations location, int minimumLevelToUse = 0, int maximumStackSize = 0)
+        public Jewelry(Guid id, string name, string namePlural, JeweleryLocations location, int minimumLevelToUse = 0, int maximumStackSize = 0)
             : base(id, name, namePlural, minimumLevelToUse, maximumStackSize)
         {
             JewelryLocation = location;

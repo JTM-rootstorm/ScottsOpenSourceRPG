@@ -50,7 +50,6 @@
     <Compile Include="Entities\Coordinate.cs" />
     <Compile Include="Entities\BaseGameItem.cs" />
     <Compile Include="Game.cs" />
-    <Compile Include="Entities\HealingPotion.cs" />
     <Compile Include="Entities\ItemAndQuantity.cs" />
     <Compile Include="Entities\Jewelry.cs" />
     <Compile Include="Entities\LivingCreature.cs" />
@@ -59,7 +58,6 @@
     <Compile Include="Entities\Monster.cs" />
     <Compile Include="Entities\Player.cs" />
     <Compile Include="Entities\PlayerQuest.cs" />
-    <Compile Include="Entities\Potion.cs" />
     <Compile Include="Entities\PropertyChangeNotifyingObject.cs" />
     <Compile Include="Entities\Quest.cs" />
     <Compile Include="Entities\Recipe.cs" />
@@ -70,6 +68,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RandomNumberGenerator.cs" />
     <Compile Include="Entities\World.cs" />
+    <Compile Include="Resources\ErrorMessages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ErrorMessages.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\ErrorMessages.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ErrorMessages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

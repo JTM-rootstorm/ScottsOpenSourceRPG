@@ -10,7 +10,7 @@
             get { return Quantity == 1 ? Item.Name : Item.NamePlural; }
         }
 
-        internal ItemAndQuantity(BaseGameItem item, int quantity)
+        public ItemAndQuantity(BaseGameItem item, int quantity)
         {
             Item = item;
             Quantity = quantity;

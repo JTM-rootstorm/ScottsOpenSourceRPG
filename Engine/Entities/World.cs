@@ -29,12 +29,12 @@ namespace Engine.Entities
             return _levels.FloorValueFor(experiencePoints);
         }
 
-        internal Location LocationAtCoordinates(Coordinate coordinates)
+        public Location LocationAtCoordinates(Coordinate coordinates)
         {
             return _locations.SingleOrDefault(loc => loc.Coordinates.Match(coordinates));
         }
 
-        internal Location StartingLocation()
+        public Location StartingLocation()
         {
             return _locations.Single(loc => loc.Coordinates.Match(new Coordinate(MIDPOINT, MIDPOINT)));
         }

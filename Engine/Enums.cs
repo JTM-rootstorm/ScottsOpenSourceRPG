@@ -38,4 +38,11 @@
         RightWrist,
         RightHand
     }
+
+    public enum ConsumableTypes
+    {
+        Potion,
+        Beverage,
+        Food
+    }
 }

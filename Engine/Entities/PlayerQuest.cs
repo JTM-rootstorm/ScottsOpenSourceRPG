@@ -7,13 +7,13 @@
 
         public string Name { get { return Quest.Name; } }
 
-        internal PlayerQuest(Quest quest)
+        public PlayerQuest(Quest quest)
         {
             Quest = quest;
             IsCompleted = false;
         }
 
-        internal void MarkAsCompleted()
+        public void MarkAsCompleted()
         {
             IsCompleted = true;
         }
