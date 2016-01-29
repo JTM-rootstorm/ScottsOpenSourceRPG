@@ -41,10 +41,7 @@
   <ItemGroup>
     <Compile Include="Collections\RandomDistributionList.cs" />
     <Compile Include="Collections\SortedListWithFloorAndCeilingIntegerKey.cs" />
-    <Compile Include="CustomEventArgs\DamageReceivedEventArgs.cs" />
-    <Compile Include="CustomEventArgs\MonsterDefeatedEventArgs.cs" />
-    <Compile Include="CustomEventArgs\MonsterEncounteredEventArgs.cs" />
-    <Compile Include="CustomEventArgs\QuestDetailsEventArgs.cs" />
+    <Compile Include="Constants.cs" />
     <Compile Include="Entities\Armor.cs" />
     <Compile Include="Entities\ConsumableItem.cs" />
     <Compile Include="Entities\Coordinate.cs" />
@@ -65,19 +62,33 @@
     <Compile Include="Entities\Weapon.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="ExtensionMethods.cs" />
+    <Compile Include="LocalizableEnums\PlayerClass.cs" />
+    <Compile Include="LocalizableEnums\Race.cs" />
+    <Compile Include="LocalizedEnums.cs" />
+    <Compile Include="PlayerSession.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RandomNumberGenerator.cs" />
-    <Compile Include="Entities\World.cs" />
     <Compile Include="Resources\ErrorMessages.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ErrorMessages.resx</DependentUpon>
     </Compile>
+    <Compile Include="Resources\Literals.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Literals.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\ExtensionMethods.cs" />
+    <Compile Include="LocalizableEnums\LocalizableEnumValue.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\ErrorMessages.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ErrorMessages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Literals.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Literals.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

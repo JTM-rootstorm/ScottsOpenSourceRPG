@@ -21,7 +21,7 @@ namespace Engine.Entities
 
                 if(_currentHitPoints != originalCurrentHitPoints)
                 {
-                    OnPropertyChanged("CurrentHitPoints");
+                    NotifyPropertyChanged("CurrentHitPoints");
                 }
 
                 if(_currentHitPoints <= 0)

@@ -6,7 +6,7 @@ namespace Engine.Entities
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        protected virtual void OnPropertyChanged(string propertyName)
+        protected void NotifyPropertyChanged(string propertyName)
         {
             PropertyChanged.SafeInvoke(this, propertyName);
         }

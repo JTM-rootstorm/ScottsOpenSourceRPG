@@ -120,13 +120,61 @@
   <data name="About" xml:space="preserve">
     <value>About</value>
   </data>
+  <data name="Accept" xml:space="preserve">
+    <value>Accept</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Charisma" xml:space="preserve">
+    <value>Charisma</value>
+  </data>
   <data name="Close" xml:space="preserve">
     <value>Close</value>
+  </data>
+  <data name="Constitution" xml:space="preserve">
+    <value>Constitution</value>
   </data>
   <data name="Copyright" xml:space="preserve">
     <value>Copyright</value>
   </data>
+  <data name="Dexterity" xml:space="preserve">
+    <value>Dexterity</value>
+  </data>
+  <data name="Exit" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="File" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="Intelligence" xml:space="preserve">
+    <value>Intelligence</value>
+  </data>
+  <data name="LoadGame" xml:space="preserve">
+    <value>Load Game</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="NewCharacter" xml:space="preserve">
+    <value>New character</value>
+  </data>
+  <data name="StartNewGame" xml:space="preserve">
+    <value>Start New Game</value>
+  </data>
+  <data name="Strength" xml:space="preserve">
+    <value>Strength</value>
+  </data>
   <data name="Version" xml:space="preserve">
     <value>Version</value>
+  </data>
+  <data name="ViewHelp" xml:space="preserve">
+    <value>View Help</value>
+  </data>
+  <data name="Wisdom" xml:space="preserve">
+    <value>Wisdom</value>
   </data>
 </root>

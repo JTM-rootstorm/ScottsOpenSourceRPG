@@ -6,8 +6,9 @@ namespace Engine.Entities
     {
         public JeweleryLocations JewelryLocation { get; private set; }
 
-        public Jewelry(Guid id, string name, string namePlural, JeweleryLocations location, int minimumLevelToUse = 0, int maximumStackSize = 0)
-            : base(id, name, namePlural, minimumLevelToUse, maximumStackSize)
+        public Jewelry(Guid id, string name, string namePlural, int value, 
+            JeweleryLocations location, int minimumLevelToUse = 0, int maximumStackSize = 0)
+            : base(id, name, namePlural, value, minimumLevelToUse, maximumStackSize)
         {
             JewelryLocation = location;
         }
