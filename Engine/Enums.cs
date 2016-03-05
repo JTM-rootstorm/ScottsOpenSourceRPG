@@ -1,5 +1,28 @@
 ﻿namespace Engine
 {
+    public enum Races
+    {
+        Dwarf,
+        Elf,
+        Gnome,
+        Halfling,
+        HalfElf,
+        HalfOrc,
+        Human
+    }
+
+    public enum PlayerClasses
+    {
+        Bard,
+        Cleric,
+        Druid,
+        Fighter,
+        Paladin,
+        Ranger,
+        Thief,
+        Wizard
+    }
+
     public enum PlayerActions
     {
         DoNothing,

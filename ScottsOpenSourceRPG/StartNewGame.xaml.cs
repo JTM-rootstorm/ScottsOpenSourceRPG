@@ -1,5 +1,6 @@
-﻿using System.Windows;
-
+﻿using System.Collections.Generic;
+using System.Windows;
+using Engine;
 using Engine.Entities;
 
 namespace ScottsOpenSourceRPG
@@ -21,6 +22,30 @@ namespace ScottsOpenSourceRPG
         public StartNewGame()
         {
             InitializeComponent();
+
+            var races = new Dictionary<Races, string>();
+
+            foreach(var enumValue in typeof(Races).GetEnumValues())
+            {
+                races.Add((Races)enumValue, enumValue.ToString().InLocalizedLanguage());
+            }
+
+            cboRaces.IsReadOnly = true;
+            cboRaces.ItemsSource = races;
+            cboRaces.SelectedValuePath = "Key";
+            cboRaces.DisplayMemberPath = "Value";
+
+            var playerClasses = new Dictionary<PlayerClasses, string>();
+
+            foreach(var enumValue in typeof(PlayerClasses).GetEnumValues())
+            {
+                playerClasses.Add((PlayerClasses)enumValue, enumValue.ToString().InLocalizedLanguage());
+            }
+
+            cboPlayerClasses.IsReadOnly = true;
+            cboPlayerClasses.ItemsSource = playerClasses;
+            cboPlayerClasses.SelectedValuePath = "Key";
+            cboPlayerClasses.DisplayMemberPath = "Value";
 
             CreateNewPlayer();
         }
@@ -45,6 +70,9 @@ namespace ScottsOpenSourceRPG
         private void CreateNewPlayer()
         {
             NewPlayer = Player.CreateRandomPlayer("");
+
+            cboRaces.SelectedValue = NewPlayer.Race;
+            cboPlayerClasses.SelectedValue = NewPlayer.PlayerClass;
         }
     }
 }

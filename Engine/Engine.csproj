@@ -62,9 +62,6 @@
     <Compile Include="Entities\Weapon.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="ExtensionMethods.cs" />
-    <Compile Include="LocalizableEnums\PlayerClass.cs" />
-    <Compile Include="LocalizableEnums\Race.cs" />
-    <Compile Include="LocalizedEnums.cs" />
     <Compile Include="PlayerSession.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RandomNumberGenerator.cs" />
@@ -78,8 +75,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Literals.resx</DependentUpon>
     </Compile>
-    <Compile Include="Utilities\ExtensionMethods.cs" />
-    <Compile Include="LocalizableEnums\LocalizableEnumValue.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\ErrorMessages.resx">

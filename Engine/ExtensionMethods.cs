@@ -1,15 +1,14 @@
 ﻿using System;
 using System.ComponentModel;
-using System.Globalization;
 using Engine.Entities;
 
 namespace Engine
 {
     public static class ExtensionMethods
     {
-        public static string AsLocalizedString(this int value)
+        public static string InLocalizedLanguage(this string text)
         {
-            return value.ToString(CultureInfo.CurrentCulture);
+            return Resources.Literals.ResourceManager.GetString(text) ?? text;
         }
 
         public static int WithinLimits(this int value, int lowerLimit, int upperLimit)
